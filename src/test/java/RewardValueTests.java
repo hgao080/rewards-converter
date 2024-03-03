@@ -30,7 +30,7 @@ public class RewardValueTests {
     @Test
     void convert_from_miles_to_cash() {
         int milesValue = 10000;
-        double expCashValue = milesValue * 0.0035;
+        double expCashValue = Math.round(milesValue * 0.0035 * 100.0) / 100.0;
         var rewardValue = new RewardValue(milesValue);
         assertEquals(expCashValue, rewardValue.getCashValue());
     }
